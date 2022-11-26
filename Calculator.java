@@ -41,7 +41,7 @@ public class Calculator
         return preparedExpression;
         }
 
-     private String expressionToRPN (String expression)
+     private String expressionToRPN (String expression) //Polska Notation
     {
         String current = "";
         Stack <Character> stack = new Stack<>();
@@ -84,7 +84,7 @@ public class Calculator
         return current;
     }
 
-    private double rpnToAnswer (String rpn) {
+    private double rpnToAnswer (String rpn) {  
         String operand;
         Stack<Double> stack = new Stack<>();
         for (int i = 0; i < rpn.length(); i++) {
@@ -108,7 +108,7 @@ public class Calculator
         return stack.pop();
     }
 
-    private int getPriority(char token)
+    private int getPriority(char token) //Priority
     {
         if (token == '*' || token == '/') return 3;
         else if (token == '+' || token == '-') return 2;
